@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardería La Favorita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Guardería La Favorita</h1>
+    <h2>Información de la Guardería</h2>
+    <p><strong>Nombre:</strong> {{ guarderia.nombre }}</p>
+    <p><strong>Dirección:</strong> {{ guarderia.direccion }}</p>
+    <p><strong>Teléfono:</strong> {{ guarderia.telefono }}</p>
+
+    <h2>Perros en la Guardería</h2>
+    <ul>
+        {% for perro in perros %}
+        <li>{{ perro.nombre }} - {{ perro.raza }} - {{ perro.edad }} años - {{ perro.peso }} kg</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Lassie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Consulta de Perros Llamados Lassie</h1>
+    <p>{{ mensaje }}</p>
+    <ul>
+        {% for perro in perros %}
+        <li>{{ perro.nombre }} - {{ perro.raza }} - {{ perro.edad }} años - {{ perro.peso }} kg</li>
+        {% endfor %}
+    </ul>
+    <p>Por favor, utiliza el siguiente enlace para ingresar login</p>
+    <a href="http://127.0.0.1:5000/login">
+        http://127.0.0.1:5000/login
+    </a>
+</body>
+</html>

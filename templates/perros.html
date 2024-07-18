@@ -1,0 +1,39 @@
+<!-- templates/perros.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perros en la Guardería</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .perro {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perros en la Guardería</h1>
+    
+    <div class="perros">
+        {% for perro in perros %}
+        <div class="perro">
+            <h1>Este es {{ perro.get_nombre() }}</h1>
+            <h2>Este es un hermoso {{ perro.get_raza() }}</h2>
+            <p>Edad: {{ perro.get_edad() }} años</p>
+            <p>Peso: {{ perro.get_peso() }} kg</p>          
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
